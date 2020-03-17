@@ -5,11 +5,14 @@
  */
 package mx.uacm.curso.entidades;
 
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -27,6 +30,29 @@ public class Persona {
 
     @Column(name = "email")
     private String email;
+
+    @OneToOne(mappedBy = "persona")
+    private Pasaporte pasaporte;
+
+    //una persona tiene muchos pedidos
+    @OneToMany(mappedBy = "persona")
+    private List<Pedido> pedidos;
+
+    public List<Pedido> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
+    }
+
+    public Pasaporte getPasaporte() {
+        return pasaporte;
+    }
+
+    public void setPasaporte(Pasaporte pasaporte) {
+        this.pasaporte = pasaporte;
+    }
 
     public int getId() {
         return id;

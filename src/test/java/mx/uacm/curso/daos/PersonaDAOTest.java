@@ -63,6 +63,11 @@ public class PersonaDAOTest {
 
         assertNotNull(p);
         assertEquals(1, p.getId());
+        
+        //verificamos que persona tiene pedidos (1-N)
+        //revisamos que el tamaño de la lista sea 2
+        assertEquals(2,p.getPedidos().size());
+        
 
     }
 
