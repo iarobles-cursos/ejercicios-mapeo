@@ -10,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -27,6 +29,20 @@ public class InformacionEstudiante {
 
     @Column(name = "telefono")
     private String telefono;
+    
+    @OneToOne
+    @JoinColumn(name="id_estudiante")
+    private Estudiante estudiante;
+
+    public Estudiante getEstudiante() {
+        return estudiante;
+    }
+
+    public void setEstudiante(Estudiante estudiante) {
+        this.estudiante = estudiante;
+    }
+    
+    
 
     public int getId() {
         return id;

@@ -64,6 +64,11 @@ public class EstudianteDAOTest {
 
         //assertNotNull(e);
         //assertEquals(1, e.getId());
+        
+        //verificamos que el mapeo con informacion estudiante
+        //funciona
+        assertNotNull(e.getInfoEstudiante());
+        assertEquals(1,e.getInfoEstudiante().getId());
 
     }
 

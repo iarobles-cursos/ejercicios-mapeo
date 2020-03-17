@@ -64,7 +64,14 @@ public class InformacionEstudianteDAOTest {
 
         assertNotNull(info);
         assertEquals(1, info.getId());
-
+        
+        //verificamos que el mapeo 1-1 funciona
+        assertNotNull(info.getEstudiante());
+        assertEquals(1,info.getEstudiante().getId());
+        assertEquals("Bart",info.getEstudiante().getNombre());
+        
+        System.out.println("nombre estudiante:" + info.getEstudiante().getNombre());
+        
     }
 
 }

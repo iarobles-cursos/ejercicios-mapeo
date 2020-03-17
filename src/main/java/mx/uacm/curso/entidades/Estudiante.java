@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -21,12 +22,26 @@ public class Estudiante {
     @SequenceGenerator(name = "sec_est", sequenceName = "estudiantes_id_seq", allocationSize = 1)
     @GeneratedValue(generator = "sec_est", strategy = GenerationType.SEQUENCE)
     private int id;
-    
-    @Column(name="nombre")
+
+    @Column(name = "nombre")
     private String nombre;
-    
-    @Column(name="apellido")
+
+    @Column(name = "apellido")
     private String apellido;
+
+    //mappedBy se llena con el nombre de la propieda
+    //de la otra entidad que se uso para mapear
+    //a esta entidad
+    @OneToOne(mappedBy = "estudiante")
+    private InformacionEstudiante infoEstudiante;
+
+    public InformacionEstudiante getInfoEstudiante() {
+        return infoEstudiante;
+    }
+
+    public void setInfoEstudiante(InformacionEstudiante infoEstudiante) {
+        this.infoEstudiante = infoEstudiante;
+    }
 
     public int getId() {
         return id;

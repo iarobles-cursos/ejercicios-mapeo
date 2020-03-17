@@ -63,6 +63,11 @@ public class PasaporteDAOTest {
 
         assertNotNull(pa);
         assertEquals(1, pa.getId());
+        
+        //verificamos que el mapeo con persona funciona
+        assertNotNull(pa.getPersona());
+        assertEquals(1,pa.getPersona().getId());
+        System.out.println("nombre persona:" + pa.getPersona().getNombre());
 
     }
 
