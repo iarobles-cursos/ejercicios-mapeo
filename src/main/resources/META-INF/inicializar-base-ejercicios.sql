@@ -55,7 +55,7 @@ INSERT INTO estudiantes VALUES(DEFAULT,'Bart','Simpson');
 INSERT INTO estudiantes VALUES(DEFAULT,'Matt','Groening');
 INSERT INTO estudiantes VALUES(DEFAULT,'Harry','Potter');
 INSERT INTO info_estudiantes VALUES(DEFAULT,1,'Springfield','(939)-555-0113');
-INSERT INTO info_estudiantes VALUES(DEFAULT,1,'Shelbyville','(111)-671-9871');
+INSERT INTO info_estudiantes VALUES(DEFAULT,2,'Shelbyville','(111)-671-9871');
 
 
 INSERT INTO personas VALUES(DEFAULT,'Juan','juan@mail.com');
