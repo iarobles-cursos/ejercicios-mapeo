@@ -52,6 +52,7 @@ public class PasaporteDAOTest {
     @AfterAll
     public static void terminar() {
         System.out.println("terminar");
+        em.close();
     }
 
     @Test

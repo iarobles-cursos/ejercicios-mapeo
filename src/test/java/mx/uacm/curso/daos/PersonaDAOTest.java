@@ -52,6 +52,7 @@ public class PersonaDAOTest {
     @AfterAll
     public static void terminar() {
         System.out.println("terminar");
+        em.close();
     }
 
     @Test
@@ -63,6 +64,10 @@ public class PersonaDAOTest {
 
         assertNotNull(p);
         assertEquals(1, p.getId());
+        
+        //verificamos que una persona tienen pasaporte
+        assertNotNull(p.getPasaporte());
+        assertEquals(1,p.getPasaporte().getId());
         
         //verificamos que persona tiene pedidos (1-N)
         //revisamos que el tamaño de la lista sea 2

@@ -20,6 +20,8 @@
                       value="create" />
             <property name="javax.persistence.schema-generation.create-script-source"
                       value="META-INF/inicializar-base-ejercicios.sql" />
+            <property name="javax.persistence.schema-generation.database.action"
+                      value="drop-and-create" />
 
             <!-- el dialecto le indica a hibernate como debe generar SQL -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />

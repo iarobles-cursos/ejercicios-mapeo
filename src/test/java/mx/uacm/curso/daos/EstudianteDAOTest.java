@@ -53,6 +53,7 @@ public class EstudianteDAOTest {
     @AfterAll
     public static void terminar() {
         System.out.println("terminar");
+        em.close();
     }
 
     @Test
@@ -62,8 +63,8 @@ public class EstudianteDAOTest {
         System.out.println("buscar estudiante por id");
         Estudiante e = estudianteDAO.buscarPorId(1);
 
-        //assertNotNull(e);
-        //assertEquals(1, e.getId());
+        assertNotNull(e);
+        assertEquals(1, e.getId());
         
         //verificamos que el mapeo con informacion estudiante
         //funciona

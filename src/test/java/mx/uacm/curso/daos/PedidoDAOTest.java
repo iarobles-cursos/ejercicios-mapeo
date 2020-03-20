@@ -53,6 +53,7 @@ public class PedidoDAOTest {
     @AfterAll
     public static void terminar() {
         System.out.println("terminar");
+        em.close();
     }
 
     @Test
@@ -64,6 +65,10 @@ public class PedidoDAOTest {
 
         assertNotNull(e);
         assertEquals(1, e.getId());
+        
+        //verificamos que el mapeo de pedido a persona funciona
+        assertNotNull(e.getPersona());
+        assertEquals(1,e.getPersona().getId());
 
     }
 
