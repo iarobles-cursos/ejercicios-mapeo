@@ -5,11 +5,15 @@
  */
 package mx.uacm.curso.entidades;
 
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -24,6 +28,22 @@ public class Autor {
 
     @Column(name = "nombre")
     private String nombre;
+
+    @ManyToMany
+    @JoinTable(
+            name = "autores_libros",
+            joinColumns = @JoinColumn(name = "id_autor"),
+            inverseJoinColumns = @JoinColumn(name = "id_libro")
+    )
+    private List<Libro> libros;
+
+    public List<Libro> getLibros() {
+        return libros;
+    }
+
+    public void setLibros(List<Libro> libros) {
+        this.libros = libros;
+    }
 
     public int getId() {
         return id;

@@ -65,6 +65,10 @@ public class AutorDAOTest {
         assertNotNull(a);
         assertEquals(1, a.getId());
         
+        //verificamos que el mapeo de autor a libros sea valido
+        assertNotNull(a.getLibros());
+        assertEquals(2,a.getLibros().size());
+        
     }
 
 }
