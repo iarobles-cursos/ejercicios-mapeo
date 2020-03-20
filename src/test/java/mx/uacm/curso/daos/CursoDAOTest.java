@@ -65,6 +65,10 @@ public class CursoDAOTest {
         assertNotNull(c);
         assertEquals(1, c.getId());
         
+        //verificamos que el mapeo de curso a estudiantes funciona
+        assertNotNull(c.getEstudiantes());
+        assertEquals(2,c.getEstudiantes().size());
+        
     }
 
 }

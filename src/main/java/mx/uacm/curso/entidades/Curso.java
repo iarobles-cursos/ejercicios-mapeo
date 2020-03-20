@@ -5,11 +5,13 @@
  */
 package mx.uacm.curso.entidades;
 
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -24,6 +26,17 @@ public class Curso {
 
     @Column(name = "nombre_curso")
     private String nombreCurso;
+
+    @ManyToMany(mappedBy = "cursos")
+    private List<Estudiante> estudiantes;
+
+    public List<Estudiante> getEstudiantes() {
+        return estudiantes;
+    }
+
+    public void setEstudiantes(List<Estudiante> estudiantes) {
+        this.estudiantes = estudiantes;
+    }
 
     public Integer getId() {
         return id;
