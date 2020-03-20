@@ -70,6 +70,9 @@ public class EstudianteDAOTest {
         //funciona
         assertNotNull(e.getInfoEstudiante());
         assertEquals(1,e.getInfoEstudiante().getId());
+        
+        assertNotNull(e.getCursos());
+        assertEquals(2,e.getCursos().size());
 
     }
 
